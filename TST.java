@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 //------------------------------------------
 // Summary: Ternary Search Tree (TST) class for storing and retrieving values associated with strings
+// I took this from lecture slides.
 //------------------------------------------
 public class TST<Value> {
     private Node root;
@@ -48,8 +49,6 @@ public class TST<Value> {
 
     //------------------------------------------
     // Summary: Retrieves all keys with the given prefix
-    // Args: prefix - The prefix to search for
-    // Returns: Iterable<String> - A list of keys with the given prefix
     //------------------------------------------
     public Iterable<String> keysWithPrefix(String prefix) {
         Queue<String> queue = new LinkedList<>();
@@ -62,9 +61,6 @@ public class TST<Value> {
 
     //------------------------------------------
     // Summary: Helper method to collect all keys with the given prefix
-    // Args: x - The current node
-    //       prefix - The current prefix
-    //       queue - The queue to store the keys
     //------------------------------------------
     private void collect(Node x, StringBuilder prefix, Queue<String> queue) {
         if (x == null) return;
@@ -78,10 +74,6 @@ public class TST<Value> {
 
     //------------------------------------------
     // Summary: Retrieves the node associated with the given key
-    // Args: x - The current node
-    //       key - The key to search for
-    //       d - The current character index
-    // Returns: Node - The node associated with the key
     //------------------------------------------
     private Node get(Node x, String key, int d) {
         if (x == null) return null;
@@ -94,8 +86,6 @@ public class TST<Value> {
 
     //------------------------------------------
     // Summary: Checks if the TST contains the given key
-    // Args: key - The key to search for
-    // Returns: boolean - True if the key is found, false otherwise
     //------------------------------------------
     public boolean contains(String key) {
         Node x = get(root, key.toLowerCase(), 0);
