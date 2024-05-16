@@ -8,7 +8,6 @@ import java.io.IOException;
 public class Main {
     //------------------------------------------
     // Summary: Main method that initializes the spell checker and processes user input
-    // Args: args - Command line arguments
     //------------------------------------------
     public static void main(String[] args) {
         if (args.length < 1) {
