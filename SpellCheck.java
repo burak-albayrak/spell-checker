@@ -10,7 +10,6 @@ public class SpellCheck {
 
     //------------------------------------------
     // Summary: Constructor that initializes the dictionary
-    // Args: dictionaryFile - Path to the dictionary file
     //------------------------------------------
     public SpellCheck(String dictionaryFile) {
         dictionary = new TST<>();
@@ -19,7 +18,6 @@ public class SpellCheck {
 
     //------------------------------------------
     // Summary: Loads words from the dictionary file into the TST
-    // Args: fileName - Path to the dictionary file
     //------------------------------------------
     private void loadDictionary(String fileName) {
         try {
@@ -36,8 +34,6 @@ public class SpellCheck {
 
     //------------------------------------------
     // Summary: Checks if a word is correctly spelled
-    // Args: word - The word to check
-    // Returns: boolean - True if the word is correct, false otherwise
     //------------------------------------------
     public boolean isCorrectWord(String word) {
         return dictionary.contains(word.toLowerCase());
@@ -45,8 +41,6 @@ public class SpellCheck {
 
     //------------------------------------------
     // Summary: Suggests alternative words based on the given prefix
-    // Args: prefix - The prefix to use for suggestions
-    // Returns: Iterable<String> - A list of suggested words
     //------------------------------------------
     public Iterable<String> suggestAlternatives(String prefix) {
         return dictionary.keysWithPrefix(prefix.toLowerCase());
