@@ -43,7 +43,10 @@ Enter a word (or 'exit' to quit): example
 Correct word
 Enter a word (or 'exit' to quit): exmple
 Misspelled?
-Suggestions: example 
+Suggestions: example
+Enter a word (or 'exit' to quit): examplee
+Misspelled?
+Suggestions: example
 Enter a word (or 'exit' to quit): exit
 ```
 
