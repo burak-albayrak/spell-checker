@@ -6,9 +6,6 @@ import java.io.IOException;
 // Summary: Main class to run the spell checker program
 //------------------------------------------
 public class Main {
-    //------------------------------------------
-    // Summary: Main method that initializes the spell checker and processes user input
-    //------------------------------------------
     public static void main(String[] args) {
         if (args.length < 1) {
             System.err.println("Usage: java Main <dictionary file>");
@@ -31,6 +28,15 @@ public class Main {
                     System.out.println("Misspelled?");
                     System.out.print("Suggestions: ");
                     Iterable<String> suggestions = spellCheck.suggestAlternatives(word);
+                    boolean foundSuggestions = suggestions.iterator().hasNext();
+
+                    // If can't find any suggestion, check the prev character.
+                    while (!foundSuggestions && word.length() > 0) {
+                        word = word.substring(0, word.length() - 1);
+                        suggestions = spellCheck.suggestAlternatives(word);
+                        foundSuggestions = suggestions.iterator().hasNext();
+                    }
+
                     for (String suggestion : suggestions) {
                         System.out.print(suggestion + " ");
                     }
